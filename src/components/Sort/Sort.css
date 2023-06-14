@@ -1,0 +1,29 @@
+.search-wrapper {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 394px;
+	height: 48px;
+	background: #131313;
+	border: 1px solid #2E2E2E;
+	border-radius: 6px;
+}
+
+.search-input {
+	background-color: #131313;
+	font-size: 16px;
+	width: 300px;
+	margin: 16px 20px;
+	color: rgba(255, 255, 255, 0.5);
+	mix-blend-mode: normal;
+	border: none;
+}
+
+.search-input:focus {
+	outline: none;
+}
+
+.mag-glass {
+	margin-right: 20px;
+}

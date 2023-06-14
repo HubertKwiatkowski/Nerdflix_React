@@ -1,3 +1,5 @@
 import { NerdflixLogo } from "./NerdflixLogo";
+import { MagGlass } from "./MagGlass";
+import { ArrowsUpDown } from "./ArrowsUpDown";
 
-export { NerdflixLogo };
+export { NerdflixLogo, MagGlass, ArrowsUpDown };

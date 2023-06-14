@@ -1,5 +1,5 @@
 import React from "react";
-import {Search, Sort} from "../../components";
+import { Search, Sort } from "../../components";
 
 import "./Movies.css";
 
@@ -13,8 +13,6 @@ const Movies = () => {
           <Sort />
         </div>
       </div>
-
-
     </div>
   );
 };

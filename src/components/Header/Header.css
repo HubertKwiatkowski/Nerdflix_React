@@ -1,9 +1,19 @@
 .header-wrapper {
-  width: 100vw;
+  width: 100%;
   height: 75px;
   align-items: center;
   color: rgba(255, 255, 255, 0.7);
   background: #131313;
+}
+
+.header-main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  height: 100%;
+  margin-inline: auto;
 }
 
 .nav-bar {
@@ -22,16 +32,6 @@
 .nav-bar-pos:hover {
   box-shadow: #e50914 0 4px;
   color: rgba(255, 255, 255, 1);
-}
-
-.header-main {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1200px;
-  height: 100%;
-  margin-inline: auto;
 }
 
 .logo {

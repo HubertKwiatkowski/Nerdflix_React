@@ -1,9 +1,9 @@
 import React from "react";
 import { Search, Sort } from "../../components";
 
-import "./Movies.css";
+import "./SearchAndSort.css";
 
-const Movies = () => {
+const SearchAndSort = () => {
   return (
     <div className="movies-wrapper">
       <div className="movies-main">
@@ -17,4 +17,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default SearchAndSort;

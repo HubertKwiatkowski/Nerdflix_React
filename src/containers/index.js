@@ -1,3 +1,4 @@
-import Movies from "../containers/Movies/Movies";
+import SearchAndSort from "./SearchAndSort/SearchAndSort";
+import MoviesDisplay from "./MoviesDisplay/MoviesDisplay";
 
-export { Movies };
+export { SearchAndSort, MoviesDisplay };

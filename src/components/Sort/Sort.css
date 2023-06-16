@@ -1,20 +1,20 @@
 .sort-by-text {
-	font-size: 16px;
-	line-height: 19px;
-	color: #FFFFFF;
-	mix-blend-mode: normal;
-	opacity: 0.5;
-	padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  padding-bottom: 10px;
 }
 
 .sort-wrapper {
   display: flex;
   flex-direction: row;
   gap: 30px;
-	z-index: 1;
 }
 
 .sort-by {
+  position: relative;
   display: grid;
   cursor: pointer;
   font-size: 16px;
@@ -24,27 +24,26 @@
   background: #131313;
   border: 1px solid #2e2e2e;
   border-radius: 6px;
+  z-index: 1;
 }
 
 .small {
-	height: 47px;
+  height: 47px;
 }
 
 .sort-by-btn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-	padding: 16px 16px;
-
+  padding: 16px 16px;
 }
 
 .sort-option {
   display: flex;
   list-style-type: none;
-	padding: 16px 16px;
-	border-top: 1px solid #2e2e2e;
+  padding: 16px 16px;
+  border-top: 1px solid #2e2e2e;
 }
-
 
 .hide {
   display: none;

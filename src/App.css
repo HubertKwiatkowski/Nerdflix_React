@@ -4,3 +4,8 @@
   font-family: "Source Sans 3", sans-serif;
   font-weight: 400;
 }
+
+.app-wrapper {
+  min-height: 100vh;
+  background: #1d1d1d;
+}

@@ -1,4 +1,4 @@
 import SearchAndSort from "./SearchAndSort/SearchAndSort";
-import MoviesDisplay from "./MoviesDisplay/MoviesDisplay";
+import MoviesToDisplay from "./MoviesDisplay/MoviesDisplay";
 
-export { SearchAndSort, MoviesDisplay };
+export { SearchAndSort, MoviesToDisplay };

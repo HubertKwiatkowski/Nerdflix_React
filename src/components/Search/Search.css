@@ -25,5 +25,8 @@
 }
 
 .mag-glass {
+  cursor: pointer;
   margin-right: 20px;
+  background: transparent;
+  border: none;
 }

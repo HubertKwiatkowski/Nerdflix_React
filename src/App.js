@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
   const movieData = data;
   const [searchResults, setSearchResults] = useState([]);
+  const [displayOrder, setDisplayOrder] = useState("ratingDescending")
 
   return (
     <div className="app-wrapper">
@@ -15,10 +16,12 @@ function App() {
       <SearchAndSort
         movieData={movieData}
         setSearchResults={setSearchResults}
+        setDisplayOrder={setDisplayOrder}
       />
       <MoviesToDisplay
         movieData={movieData}
         searchResults={searchResults}
+        displayOrder={displayOrder}
       />
     </div>
   );

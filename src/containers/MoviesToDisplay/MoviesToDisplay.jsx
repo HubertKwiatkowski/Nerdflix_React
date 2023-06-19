@@ -25,8 +25,6 @@ const MoviesToDisplay = ({
 
   if (searchResults.length > 0) {
     if (showOnlyFavourite) {
-      console.log(searchResults);
-      console.log(allFavourite);
       moviesToRender = searchResults.filter((movie) =>
         allFavourite.includes(movie.title)
       );
@@ -46,7 +44,9 @@ const MoviesToDisplay = ({
   const isFullWidth = () => {
     if (elementRef.current) {
       const width = elementRef.current.offsetWidth;
-      const isFullWidth = Math.floor(width / 200) <= allFavourite.length;
+      const isFullWidth =
+        Math.floor(width / 200) <= allFavourite.length ||
+        Math.floor(width / 200) <= searchResults.length;
       return isFullWidth;
     }
   };
@@ -57,7 +57,11 @@ const MoviesToDisplay = ({
         ref={elementRef}
         className={classNames(
           { "movies-display-main": true },
-          { "to-left": showOnlyFavourite && !isFullWidth() }
+          {
+            "to-left":
+              (showOnlyFavourite && !isFullWidth()) ||
+              (searchResults.length > 0 && !isFullWidth()),
+          }
         )}
       >
         {moviesToRender.map((movie) => (

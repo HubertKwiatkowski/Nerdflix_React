@@ -4,7 +4,7 @@
 
 .movies-display-main {
   display: grid;
-  grid-template-columns: repeat( auto-fit, 190px);
+  grid-template-columns: repeat(auto-fit, 190px);
   justify-content: center;
   grid-gap: 10px;
   width: 1100px;

@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { MovieItem } from "../../components";
 import classNames from "classnames";
 
@@ -14,10 +14,8 @@ const MoviesToDisplay = ({
   setShowOnlyFavourite,
 }) => {
   const movies = movieData.data.movies;
-  const elementRef = useRef(null)
+  const elementRef = useRef(null);
   let moviesToRender = movies;
-
-
 
   if (showOnlyFavourite) {
     moviesToRender = movies.filter((movie) =>
@@ -47,16 +45,21 @@ const MoviesToDisplay = ({
 
   const isFullWidth = () => {
     if (elementRef.current) {
-      const width = elementRef.current.offsetWidth
-      const isFullWidth = Math.floor(width / 200) <= allFavourite.length
-      return isFullWidth
+      const width = elementRef.current.offsetWidth;
+      const isFullWidth = Math.floor(width / 200) <= allFavourite.length;
+      return isFullWidth;
     }
-
   };
 
   return (
     <div className="movies-display-wrapper">
-      <div ref={elementRef} className={classNames({"movies-display-main": true}, {"to-left": showOnlyFavourite && !isFullWidth()})}>
+      <div
+        ref={elementRef}
+        className={classNames(
+          { "movies-display-main": true },
+          { "to-left": showOnlyFavourite && !isFullWidth() }
+        )}
+      >
         {moviesToRender.map((movie) => (
           <MovieItem
             key={movie.id}

@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Like } from "../../icons";
 
 import "./MovieItem.css";
+import { Star } from "../../icons/Star";
 
-const MovieItem = ({ title, urlPoster, year, rating }) => {
+const MovieItem = ({
+  title,
+  urlPoster,
+  year,
+  rating,
+  allFavourite,
+  setAllFavourite,
+  setShowOnlyFavourite,
+}) => {
+  const [isInFavourite, setIsInFavourite] = useState(false);
+
   const handleImageError = (event) => {
     event.target.src = "img/fallback-image.png";
     event.target.classList.add("movie-img-error");
+  };
+
+  const addToFavourite = () => {
+    if (allFavourite.includes(title)) {
+      const updatedTitles = allFavourite.filter((movie) => movie !== title);
+      if (updatedTitles.length === 0) {
+        setShowOnlyFavourite(false);
+      }
+      setAllFavourite(updatedTitles);
+    } else {
+      setAllFavourite([...allFavourite, title]);
+    }
+    setIsInFavourite(!isInFavourite);
   };
 
   return (
@@ -19,8 +43,8 @@ const MovieItem = ({ title, urlPoster, year, rating }) => {
           onError={handleImageError}
         />
         <div className="movie-hover">
-          <div className="movie-like">
-            <Like />
+          <div className="movie-like" onClick={addToFavourite}>
+            {isInFavourite ? <Star /> : <Like />}
           </div>
           <div className="movie-rating">{rating}</div>
         </div>

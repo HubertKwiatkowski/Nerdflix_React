@@ -16,19 +16,17 @@ const Sort = ({ setDisplayOrder }) => {
     setRatingIsToggled(!ratingIsToggled);
   };
 
-
-
   const handleSort = (order) => {
-    if (order==="letterAscending") {
-      setDisplayOrder("letterAscending")
-    } else if (order==="letterDescending") {
-      setDisplayOrder("letterDescending")
-    } else if (order==="ratingAscending") {
-      setDisplayOrder("ratingAscending")
-    } else if (order==="ratingDescending") {
-      setDisplayOrder("ratingDescending")
+    if (order === "letterAscending") {
+      setDisplayOrder("letterAscending");
+    } else if (order === "letterDescending") {
+      setDisplayOrder("letterDescending");
+    } else if (order === "ratingAscending") {
+      setDisplayOrder("ratingAscending");
+    } else if (order === "ratingDescending") {
+      setDisplayOrder("ratingDescending");
     }
-  }
+  };
 
   return (
     <div>
@@ -43,8 +41,18 @@ const Sort = ({ setDisplayOrder }) => {
             <ArrowsUpDown />
           </div>
           <ul className={classNames({ hide: titleIsToggled })}>
-            <li className="sort-option" onClick={() => handleSort("letterAscending")}>(A-Z)</li>
-            <li className="sort-option" onClick={() => handleSort("letterDescending")}>(Z-A)</li>
+            <li
+              className="sort-option"
+              onClick={() => handleSort("letterAscending")}
+            >
+              (A-Z)
+            </li>
+            <li
+              className="sort-option"
+              onClick={() => handleSort("letterDescending")}
+            >
+              (Z-A)
+            </li>
           </ul>
         </div>
 
@@ -57,8 +65,18 @@ const Sort = ({ setDisplayOrder }) => {
             <ArrowsUpDown />
           </div>
           <ul className={classNames({ hide: ratingIsToggled })}>
-            <li className="sort-option" onClick={() => handleSort("ratingDescending")}>(10-0)</li>
-            <li className="sort-option" onClick={() => handleSort("ratingAscending")}>(0-10)</li>
+            <li
+              className="sort-option"
+              onClick={() => handleSort("ratingDescending")}
+            >
+              (10-0)
+            </li>
+            <li
+              className="sort-option"
+              onClick={() => handleSort("ratingAscending")}
+            >
+              (0-10)
+            </li>
           </ul>
         </div>
       </div>

@@ -11,6 +11,10 @@
   margin-inline: auto;
 }
 
+.to-left {
+  justify-content: flex-start;
+}
+
 @media only screen and (min-width: 1400px) {
   .movies-display-main {
     width: 1200px;

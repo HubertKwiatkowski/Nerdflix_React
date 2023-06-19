@@ -1,16 +1,17 @@
 .movie-item-wrapper {
   color: #fff;
+  margin-inline: 9px;
 }
 
 .img-wrapper {
   position: relative;
-  width: 182px;
+  width: 180px;
   height: 268px;
   margin-bottom: 21px;
 }
 
 .movie-img {
-  width: 182px;
+  width: 180px;
   height: auto;
   border-radius: 6px;
 }

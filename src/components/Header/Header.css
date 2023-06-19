@@ -41,6 +41,10 @@
   transform: translate(-50%, -50%);
 }
 
+.stars:hover {
+  cursor: pointer;
+}
+
 .stars-counter {
   font-size: 16px;
   line-height: 16px;

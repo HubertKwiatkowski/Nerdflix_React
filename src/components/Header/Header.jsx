@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NerdflixLogo } from "../../icons";
 import { Star } from "../../icons/Star";
 
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ allFavourite, showOnlyFavourite, setShowOnlyFavourite }) => {
   return (
     <div className="header-wrapper">
       <div className="header-main">
@@ -17,9 +17,16 @@ const Header = () => {
         <div className="logo">
           <NerdflixLogo />
         </div>
-        <div className="stars">
+        <div
+          className="stars"
+          onClick={() => {
+            if (allFavourite.length > 0) {
+              setShowOnlyFavourite(!showOnlyFavourite);
+            }
+          }}
+        >
           <Star />
-          <span className="stars-counter">0</span>
+          <span className="stars-counter">{allFavourite.length}</span>
         </div>
       </div>
     </div>

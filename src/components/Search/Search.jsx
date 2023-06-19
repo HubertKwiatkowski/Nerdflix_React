@@ -13,21 +13,21 @@ const Search = ({ setSearchResults, movieData }) => {
       movie.title.toLowerCase().includes(query.toLowerCase())
     );
     setSearchResults(matchingResults);
-  }
+  };
 
-  const handleInputChange= (event) => {
+  const handleInputChange = (event) => {
     setQuery(event.target.value);
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     search();
-  }
+  };
 
   const handleFocus = (event) => {
-    event.target.value = ''
-    setSearchResults(event.target.value)
-  }
+    event.target.value = "";
+    setSearchResults(event.target.value);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="search-wrapper">

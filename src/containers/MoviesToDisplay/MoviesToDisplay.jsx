@@ -23,9 +23,11 @@ const MoviesToDisplay = ({
 
   if (searchResults.length > 0) {
     if (showOnlyFavourite) {
-      console.log(searchResults)
-      console.log(allFavourite)
-      moviesToRender = searchResults.filter((movie) => allFavourite.includes(movie.title))
+      console.log(searchResults);
+      console.log(allFavourite);
+      moviesToRender = searchResults.filter((movie) =>
+        allFavourite.includes(movie.title)
+      );
     } else moviesToRender = searchResults;
   }
 

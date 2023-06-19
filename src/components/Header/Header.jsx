@@ -1,14 +1,24 @@
 import React, { useState } from "react";
-import { NerdflixLogo } from "../../icons";
+import { BurgerIcon, NerdflixLogo } from "../../icons";
 import { Star } from "../../icons/Star";
+import classNames from "classnames";
 
 import "./Header.css";
 
 const Header = ({ allFavourite, showOnlyFavourite, setShowOnlyFavourite }) => {
+  const [isToggled, setIsToggled] = useState(true);
+
+  const toggleHide = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <div className="header-wrapper">
       <div className="header-main">
-        <ul className="nav-bar">
+        <div className="burger-button" onClick={toggleHide}>
+          <BurgerIcon />
+        </div>
+        <ul className={classNames({ "nav-bar": true }, { "hide-menu": isToggled })}>
           <li className="nav-bar-pos">Homepage</li>
           <li className="nav-bar-pos">Series</li>
           <li className="nav-bar-pos">Movies</li>

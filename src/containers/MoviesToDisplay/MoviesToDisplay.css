@@ -6,9 +6,28 @@
 .movies-display-main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 20px;
-  width: 1200px;
+  width: 1100px;
   margin-inline: auto;
+}
+
+@media only screen and (min-width: 1400px) {
+  .movies-display-main {
+    width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .movies-display-main {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .movies-display-main {
+    justify-content: space-evenly;
+  }
 }
 
 .spinner {

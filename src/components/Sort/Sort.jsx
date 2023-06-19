@@ -29,9 +29,9 @@ const Sort = ({ setDisplayOrder }) => {
   };
 
   return (
-    <div>
+    <div className="sort-wrapper">
       <p className="sort-by-text">Sort by</p>
-      <div className="sort-wrapper">
+      <div className="sort-main">
         <div
           className={classNames("sort-by", { small: titleIsToggled })}
           onClick={handleTitleClick}

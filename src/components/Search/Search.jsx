@@ -24,8 +24,9 @@ const Search = ({ setSearchResults, movieData }) => {
     search();
   };
 
-  const handleFocus = (event) => {
+  const handleClick = (event) => {
     event.target.value = "";
+    setQuery(event.target.value);
     setSearchResults(event.target.value);
   };
 
@@ -37,7 +38,7 @@ const Search = ({ setSearchResults, movieData }) => {
         placeholder="Search for a title"
         value={query}
         onChange={handleInputChange}
-        onFocus={handleFocus}
+        onClick={handleClick}
       />
       <button type="submit" onClick={handleSubmit} className="mag-glass">
         <MagGlass />

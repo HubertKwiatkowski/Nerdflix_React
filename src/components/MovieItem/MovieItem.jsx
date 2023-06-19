@@ -13,8 +13,7 @@ const MovieItem = ({
   setAllFavourite,
   setShowOnlyFavourite,
 }) => {
-  const [isInFavourite, setIsInFavourite] = useState(false);
-
+  const isInFavourite = allFavourite.includes(title)
   const handleImageError = (event) => {
     event.target.src = "img/fallback-image.png";
     event.target.classList.add("movie-img-error");
@@ -30,7 +29,6 @@ const MovieItem = ({
     } else {
       setAllFavourite([...allFavourite, title]);
     }
-    setIsInFavourite(!isInFavourite);
   };
 
   return (

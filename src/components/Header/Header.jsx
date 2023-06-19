@@ -18,7 +18,12 @@ const Header = ({ allFavourite, showOnlyFavourite, setShowOnlyFavourite }) => {
         <div className="burger-button" onClick={toggleHide}>
           <BurgerIcon />
         </div>
-        <ul className={classNames({ "nav-bar": true }, { "hide-menu": isToggled })}>
+        <ul
+          className={classNames(
+            { "nav-bar": true },
+            { "hide-menu": isToggled }
+          )}
+        >
           <li className="nav-bar-pos">Homepage</li>
           <li className="nav-bar-pos">Series</li>
           <li className="nav-bar-pos">Movies</li>
@@ -27,16 +32,29 @@ const Header = ({ allFavourite, showOnlyFavourite, setShowOnlyFavourite }) => {
         <div className="logo">
           <NerdflixLogo />
         </div>
-        <div
-          className="stars"
-          onClick={() => {
-            if (allFavourite.length > 0) {
-              setShowOnlyFavourite(!showOnlyFavourite);
-            }
-          }}
-        >
-          <Star />
-          <span className="stars-counter">{allFavourite.length}</span>
+        <div className="favourite">
+          {showOnlyFavourite && (
+            <div
+              className="go-back"
+              onClick={() => {
+                setShowOnlyFavourite(!showOnlyFavourite);
+              }}
+            >
+              Go Back
+            </div>
+          )}
+
+          <div
+            className="stars"
+            onClick={() => {
+              if (allFavourite.length > 0) {
+                setShowOnlyFavourite(!showOnlyFavourite);
+              }
+            }}
+          >
+            <Star />
+            <span className="stars-counter">{allFavourite.length}</span>
+          </div>
         </div>
       </div>
     </div>

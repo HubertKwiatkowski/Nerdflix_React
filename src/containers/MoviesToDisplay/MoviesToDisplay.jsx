@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { MovieItem } from "../../components";
+import classNames from "classnames";
 
 import "./MoviesToDisplay.css";
 
@@ -13,6 +14,7 @@ const MoviesToDisplay = ({
   setShowOnlyFavourite,
 }) => {
   const movies = movieData.data.movies;
+  const elementRef = useRef(null);
   let moviesToRender = movies;
 
   if (showOnlyFavourite) {
@@ -23,8 +25,6 @@ const MoviesToDisplay = ({
 
   if (searchResults.length > 0) {
     if (showOnlyFavourite) {
-      console.log(searchResults);
-      console.log(allFavourite);
       moviesToRender = searchResults.filter((movie) =>
         allFavourite.includes(movie.title)
       );
@@ -41,9 +41,29 @@ const MoviesToDisplay = ({
     moviesToRender.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
   }
 
+  const isFullWidth = () => {
+    if (elementRef.current) {
+      const width = elementRef.current.offsetWidth;
+      const isFullWidth =
+        Math.floor(width / 200) <= allFavourite.length ||
+        Math.floor(width / 200) <= searchResults.length;
+      return isFullWidth;
+    }
+  };
+
   return (
     <div className="movies-display-wrapper">
-      <div className="movies-display-main">
+      <div
+        ref={elementRef}
+        className={classNames(
+          { "movies-display-main": true },
+          {
+            "to-left":
+              (showOnlyFavourite && !isFullWidth()) ||
+              (searchResults.length > 0 && !isFullWidth()),
+          }
+        )}
+      >
         {moviesToRender.map((movie) => (
           <MovieItem
             key={movie.id}

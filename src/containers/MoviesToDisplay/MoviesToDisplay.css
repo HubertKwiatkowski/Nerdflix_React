@@ -1,15 +1,18 @@
 .movies-display-wrapper {
-  width: 100%;
   padding: 56px 0 100px;
 }
 
 .movies-display-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 190px);
+  justify-content: space-between;
+  grid-gap: 10px;
   width: 1100px;
   margin-inline: auto;
+}
+
+.to-left {
+  justify-content: flex-start;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -24,9 +27,8 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   .movies-display-main {
-    justify-content: space-evenly;
   }
 }
 
